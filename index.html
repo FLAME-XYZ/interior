@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albi Interior - Spesialis Furniture dan Desain Interior</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #8B5A2B;
+            --secondary: #D2B48C;
+            --light: #F5F5F5;
+            --dark: #333;
+            --white: #FFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .about-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+        
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .about-image {
+            flex: 1;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .service-content p {
+            margin-bottom: 15px;
+        }
+        
+        .read-more {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .read-more i {
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+            transition: all 0.3s;
+            border-radius: 30px;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(139, 90, 43, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            color: var(--white);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-overlay h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .portfolio-overlay p {
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+        
+        .testimonial-item {
+            padding: 30px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 0 20px;
+        }
+        
+        .client-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+        }
+        
+        .client-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .client-rating {
+            color: #FFC107;
+            margin-bottom: 15px;
+        }
+        
+        .client-comment {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .client-info h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .info-icon {
+            font-size: 20px;
+            color: var(--primary);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .footer-links li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+            position: relative;
+            animation: modalFadeIn 0.3s;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        .modal-header {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .modal-body {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .modal-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .modal-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .modal-details {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .modal-details h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .detail-item {
+            margin-bottom: 15px;
+        }
+
+        .detail-item h5 {
+            color: var(--dark);
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .detail-item p {
+            color: #666;
+        }
+
+        @keyframes modalFadeIn {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-text {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+
+            .modal-body {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: left 0.3s;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .btn {
+                display: block;
+                width: max-content;
+                margin: 0 auto 15px;
+            }
+            
+            .btn-outline {
+                margin-left: auto;
+            }
+
+            .modal-content {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo"><i class="fas fa-couch"></i> Albi Interior</a>
+                
+                <ul class="nav-links">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Spesialis Furniture & Desain Interior</h1>
+                <p>Kami menyediakan solusi lengkap untuk kebutuhan furniture dan desain interior rumah Anda dengan kualitas terbaik dan harga kompetitif.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn">Lihat Layanan</a>
+                    <a href="#contact" class="btn btn-outline">Hubungi Kami</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang Kami</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Albi Interior - Spesialis Furniture Custom</h3>
+                    <p>Albi Interior adalah perusahaan yang bergerak di bidang pembuatan furniture custom dan jasa desain interior. Dengan pengalaman lebih dari 3 tahun, kami telah membantu ratusan klien mewujudkan impian mereka untuk memiliki rumah yang nyaman dan indah.</p>
+                    <p>Kami mengkhususkan diri dalam pembuatan furniture berkualitas tinggi dengan bahan pilihan dan pengerjaan yang detail. Setiap produk kami dibuat dengan penuh dedikasi untuk memastikan kepuasan pelanggan.</p>
+                    <p>Tim kami terdiri dari para ahli di bidangnya, mulai dari desainer interior, tukang kayu profesional, hingga tenaga pemasangan yang berpengalaman.</p>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tentang Albi Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Layanan Kami</h2>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Lemari Custom">
+                    </div>
+                    <div class="service-content">
+                        <h3>Lemari Custom</h3>
+                        <p>Kami membuat lemari custom sesuai kebutuhan dan ukuran ruangan Anda. Bahan berkualitas dengan desain modern atau klasik.</p>
+                        <a href="#" class="read-more" onclick="sendWhatsAppMessage('Lemari Custom')">Pesan Sekarang <i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Backdrop">
+                    </div>
+                    <div class="service-content">
+                        <h3>Backdrop</h3>
+                        <p>Backdrop untuk berbagai acara seperti pernikahan, ulang tahun, atau acara perusahaan dengan desain eksklusif.</p>
+                        <a href="#" class="read-more" onclick="sendWhatsAppMessage('Backdrop')">Pesan Sekarang <i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Kitchen Set">
+                    </div>
+                    <div class="service-content">
+                        <h3>Kitchen Set</h3>
+                        <p>Kitchen set custom dengan material pilihan dan desain ergonomis untuk kenyamanan aktivitas memasak Anda.</p>
+                        <a href="#" class="read-more" onclick="sendWhatsAppMessage('Kitchen Set')">Pesan Sekarang <i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Kanopi">
+                    </div>
+                    <div class="service-content">
+                        <h3>Kanopi</h3>
+                        <p>Pembuatan dan pemasangan kanopi untuk teras, garasi, atau area outdoor lainnya dengan material kuat dan tahan lama.</p>
+                        <a href="#" class="read-more" onclick="sendWhatsAppMessage('Kanopi')">Pesan Sekarang <i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1392&q=80" alt="Meja Rias">
+                    </div>
+                    <div class="service-content">
+                        <h3>Meja Rias</h3>
+                        <p>Meja rias elegan dengan berbagai pilihan desain dan material, dilengkapi dengan cermin dan laci penyimpanan.</p>
+                        <a href="#" class="read-more" onclick="sendWhatsAppMessage('Meja Rias')">Pesan Sekarang <i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80" alt="Konstruksi">
+                    </div>
+                    <div class="service-content">
+                        <h3>Konstruksi</h3>
+                        <p>Jasa konstruksi untuk renovasi rumah, pembuatan partisi, plafon, dan berbagai pekerjaan konstruksi lainnya.</p>
+                        <a href="#" class="read-more" onclick="sendWhatsAppMessage('Konstruksi')">Pesan Sekarang <i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service 7 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Meja TV">
+                    </div>
+                    <div class="service-content">
+                        <h3>Meja TV</h3>
+                        <p>Meja TV custom dengan desain modern dan fungsional, tersedia dalam berbagai ukuran dan material.</p>
+                        <a href="#" class="read-more" onclick="sendWhatsAppMessage('Meja TV')">Pesan Sekarang <i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Portfolio Kami</h2>
+            </div>
+            
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="lemari">Lemari</button>
+                <button class="filter-btn" data-filter="kitchen">Kitchen Set</button>
+                <button class="filter-btn" data-filter="meja">Meja</button>
+                <button class="filter-btn" data-filter="konstruksi">Konstruksi</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Item 1 -->
+                <div class="portfolio-item" data-category="lemari">
+                    <img src="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Lemari Minimalis" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Lemari Minimalis</h3>
+                        <p>Lemari pakaian dengan desain minimalis dan fungsional untuk kamar tidur utama.</p>
+                        <a href="#" class="btn">Lihat Detail</a>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="portfolio-item" data-category="kitchen">
+                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Kitchen Set Modern" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Kitchen Set Modern</h3>
+                        <p>Kitchen set dengan material HPL dan desain modern untuk apartemen.</p>
+                        <a href="#" class="btn">Lihat Detail</a>
+                    </div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="portfolio-item" data-category="meja">
+                    <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1392&q=80" alt="Meja Rias Elegan" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Meja Rias Elegan</h3>
+                        <p>Meja rias dengan material kayu jati dan cermin besar untuk kamar utama.</p>
+                        <a href="#" class="btn">Lihat Detail</a>
+                    </div>
+                </div>
+                
+                <!-- Item 4 -->
+                <div class="portfolio-item" data-category="konstruksi">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80" alt="Renovasi Rumah" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Renovasi Rumah</h3>
+                        <p>Proyek renovasi rumah lengkap dengan perubahan layout dan penambahan ruangan.</p>
+                        <a href="#" class="btn">Lihat Detail</a>
+                    </div>
+                </div>
+                
+                <!-- Item 5 -->
+                <div class="portfolio-item" data-category="lemari">
+                    <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Lemari Buku Custom" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Lemari Buku Custom</h3>
+                        <p>Lemari buku dengan desain unik dan material kayu solid untuk ruang kerja.</p>
+                        <a href="#" class="btn">Lihat Detail</a>
+                    </div>
+                </div>
+                
+                <!-- Item 6 -->
+                <div class="portfolio-item" data-category="meja">
+                    <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Meja TV Minimalis" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Meja TV Minimalis</h3>
+                        <p>Meja TV dengan desain minimalis dan material MDF tahan lama.</p>
+                        <a href="#" class="btn">Lihat Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimonial Klien</h2>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-item">
+                    <div class="client-img">
+                        <img src="https://i.imgur.com/JR6xJjW.jpg" alt="Client">
+                    </div>
+                    <div class="client-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="client-comment">"Sangat puas dengan kitchen set yang dibuat oleh Albi Interior. Desainnya sesuai dengan yang saya inginkan dan pengerjaannya rapi. Harganya juga kompetitif dibandingkan tempat lain."</p>
+                    <div class="client-info">
+                        <h4>Sarah Wijaya</h4>
+                        <p>Klien Kitchen Set - Jakarta</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Kami</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Informasi Kontak</h3>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Alamat</h4>
+                            <p>Jl.Gringsing-Kedawung Desa Sawangan Rt04/Rw01 Kec.Gringsing Kab.Batang</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Telepon</h4>
+                            <p>+6282310451593</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>albiinterior@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Jam Kerja</h4>
+                            <p>Senin - Jumat: 08.00 - 17.00</p>
+                            <p>Sabtu & Minggu: 08.00 - 14.00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Kirim Pesan</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nama Anda" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email Anda" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Nomor Telepon">
+                        </div>
+                        
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option value="" disabled selected>Pilih Layanan</option>
+                                <option value="lemari">Lemari Custom</option>
+                                <option value="backdrop">Backdrop</option>
+                                <option value="kitchen">Kitchen Set</option>
+                                <option value="kanopi">Kanopi</option>
+                                <option value="meja-rias">Meja Rias</option>
+                                <option value="konstruksi">Konstruksi</option>
+                                <option value="meja-tv">Meja TV</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Pesan Anda" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Tentang Albi Interior</h3>
+                    <p>Albi Interior adalah spesialis furniture custom dan jasa desain interior yang berkomitmen memberikan produk berkualitas dengan pelayanan terbaik.</p>
+                    </div>
+                </div>
+                
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Albi Interior. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="portfolioModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h3 id="modalTitle">Judul Proyek</h3>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Detail Proyek">
+                </div>
+                <div class="modal-details">
+                    <h4>Detail Produk</h4>
+                    
+                    <div class="detail-item">
+                        <h5>Bahan yang Digunakan</h5>
+                        <p id="materialDetail">-</p>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <h5>Ukuran</h5>
+                        <p id="sizeDetail">-</p>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <h5>Waktu Pengerjaan</h5>
+                        <p id="timeDetail">-</p>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <h5>Deskripsi</h5>
+                        <p id="descDetail">-</p>
+                    </div>
+                    
+                    <a href="#" class="btn" id="modalWhatsappBtn" style="margin-top: 20px;">Pesan Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Fungsi untuk mengirim pesan WhatsApp
+        function sendWhatsAppMessage(serviceName) {
+            const message = `Halo Albi Interior, saya tertarik dengan layanan *${serviceName}*. Bisa info lebih detail?`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+        }
+        
+        // Nomor WhatsApp Anda
+        const whatsappNumber = "6282310451593"; // Ganti dengan nomor Anda
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Portfolio Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Portfolio Modal Functionality
+        const modal = document.getElementById('portfolioModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalImage = document.getElementById('modalImage');
+        const materialDetail = document.getElementById('materialDetail');
+        const sizeDetail = document.getElementById('sizeDetail');
+        const timeDetail = document.getElementById('timeDetail');
+        const descDetail = document.getElementById('descDetail');
+        const modalWhatsappBtn = document.getElementById('modalWhatsappBtn');
+        const closeModal = document.querySelector('.close-modal');
+
+        // Data detail untuk setiap portfolio item
+        const portfolioDetails = {
+            "lemari1": {
+                title: "Lemari Minimalis",
+                image: "https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                material: "Kayu MDF dengan finishing HPL, handle stainless steel",
+                size: "Tinggi 210cm, Lebar 180cm, Kedalaman 60cm",
+                time: "7-10 hari kerja",
+                description: "Lemari pakaian dengan desain minimalis dan fungsional untuk kamar tidur utama. Dilengkapi dengan 3 pintu geser, rak penyimpanan, dan bagian gantungan."
+            },
+            "kitchen1": {
+                title: "Kitchen Set Modern",
+                image: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                material: "Multiplek teakwood dengan finishing melamine",
+                size: "Panjang 3 meter, Tinggi 90cm",
+                time: "10-14 hari kerja",
+                description: "Kitchen set dengan material HPL dan desain modern untuk apartemen. Dilengkapi dengan kabinet bawah, laci, dan rak penyimpanan."
+            },
+            "meja1": {
+                title: "Meja Rias Elegan",
+                image: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1392&q=80",
+                material: "Kayu jati solid dengan finishing natural",
+                size: "Tinggi 75cm, Lebar 120cm, Kedalaman 45cm",
+                time: "5-7 hari kerja",
+                description: "Meja rias elegan dengan cermin besar dan 5 laci penyimpanan. Desain klasik dengan sentuhan modern."
+            },
+            "konstruksi1": {
+                title: "Renovasi Rumah",
+                image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80",
+                material: "Beton, baja ringan, dan kayu",
+                size: "Luas 80m²",
+                time: "4-6 minggu",
+                description: "Proyek renovasi rumah lengkap dengan perubahan layout dan penambahan ruangan. Termasuk pembuatan kamar tambahan dan renovasi dapur."
+            },
+            "lemari2": {
+                title: "Lemari Buku Custom",
+                image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80",
+                material: "Kayu solid oak dengan finishing dark walnut",
+                size: "Tinggi 200cm, Lebar 150cm, Kedalaman 35cm",
+                time: "8-12 hari kerja",
+                description: "Lemari buku custom dengan desain unik dan rak adjustable. Cocok untuk ruang kerja atau perpustakaan pribadi."
+            },
+            "meja2": {
+                title: "Meja TV Minimalis",
+                image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80",
+                material: "MDF dengan finishing high gloss white",
+                size: "Panjang 180cm, Tinggi 50cm, Kedalaman 40cm",
+                time: "5-8 hari kerja",
+                description: "Meja TV dengan desain minimalis dan fungsional. Dilengkapi dengan 2 laci dan rak penyimpanan bawah."
+            }
+        };
+
+        // Fungsi untuk membuka modal
+        function openModal(itemId) {
+            const detail = portfolioDetails[itemId];
+            if (detail) {
+                modalTitle.textContent = detail.title;
+                modalImage.src = detail.image;
+                modalImage.alt = detail.title;
+                materialDetail.textContent = detail.material;
+                sizeDetail.textContent = detail.size;
+                timeDetail.textContent = detail.time;
+                descDetail.textContent = detail.description;
+                
+                // Set WhatsApp button
+                modalWhatsappBtn.onclick = function() {
+                    sendWhatsAppMessage(detail.title + ' dari Portfolio');
+                    return false;
+                };
+                
+                modal.style.display = "block";
+                document.body.style.overflow = "hidden";
+            }
+        }
+
+        // Fungsi untuk menutup modal
+        function closeModalFunc() {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        // Event listeners
+        closeModal.addEventListener('click', closeModalFunc);
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                closeModalFunc();
+            }
+        });
+
+        // Update portfolio items to use modal
+        document.querySelectorAll('.portfolio-item .btn').forEach((btn, index) => {
+            btn.textContent = "Lihat Detail";
+            btn.onclick = function(e) {
+                e.preventDefault();
+                const itemId = Object.keys(portfolioDetails)[index];
+                if (itemId) {
+                    openModal(itemId);
+                }
+            };
+        });
+        
+        // Simple testimonial slider
+        let currentTestimonial = 0;
+        const testimonials = [
+            {
+                img: "https://i.imgur.com/JR6xJjW.jpg",
+                name: "Sarah Wijaya",
+                role: "Klien Kitchen Set - Jakarta",
+                comment: "\"Sangat puas dengan kitchen set yang dibuat oleh Albi Interior. Desainnya sesuai dengan yang saya inginkan dan pengerjaannya rapi. Harganya juga kompetitif dibandingkan tempat lain.\"",
+                rating: 5
+            },
+            {
+                img: "https://i.imgur.com/8Km9t0k.jpg",
+                name: "Budi Santoso",
+                role: "Klien Lemari Custom - Bandung",
+                comment: "\"Lemari yang dibuat sangat kokoh dan desainnya modern. Tim Albi Interior profesional dan mengerjakan tepat waktu. Recommended!\"",
+                rating: 5
+            },
+            {
+                img: "https://i.imgur.com/5QvzKL2.jpg",
+                name: "Dewi Lestari",
+                role: "Klien Renovasi Rumah - Surabaya",
+                comment: "\"Hasil renovasi rumah saya melebihi ekspektasi. Material yang digunakan berkualitas dan pekerjaannya rapi. Terima kasih Albi Interior!\"",
+                rating: 4
+            }
+        ];
+        
+        function showTestimonial(index) {
+            const testimonialItem = document.querySelector('.testimonial-item');
+            const testimonial = testimonials[index];
+            
+            testimonialItem.innerHTML = `
+                <div class="client-img">
+                    <img src="${testimonial.img}" alt="Client">
+                </div>
+                <div class="client-rating">
+                    ${'<i class="fas fa-star"></i>'.repeat(testimonial.rating)}
+                </div>
+                <p class="client-comment">${testimonial.comment}</p>
+                <div class="client-info">
+                    <h4>${testimonial.name}</h4>
+                    <p>${testimonial.role}</p>
+                </div>
+            `;
+        }
+        
+        // Change testimonial every 5 seconds
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+        
+        // Initialize first testimonial
+        showTestimonial(0);
+    </script>
+</body>
+</html>
